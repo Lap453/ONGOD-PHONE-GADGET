@@ -429,7 +429,7 @@
           <span class="header-title">ONGOD PHONE GADGET</span>
         </div>
         <div class="header-actions">
-          <img src="http://localhost:3000/images/notification%20icon.png" alt="Notification" id="notification-btn" onclick="showNotifications()">
+          <img src="https://ongod-phone-gadget-mjdq.onrender.com/images/notification%20icon.png" alt="Notification" id="notification-btn" onclick="showNotifications()">
         </div>
       </div>
     </div>
@@ -465,7 +465,7 @@
   </div>
   <section id="loading-screen" style="display:flex;align-items:center;justify-content:center;height:100vh;background:rgba(255,255,255,0.9);position:fixed;top:0;left:0;width:100%;z-index:9999;">
     <div style="text-align:center;">
-      <img src="http://localhost:3000/images/loading.png" alt="Loading..." style="width:80px;height:80px;">
+      <img src="https://ongod-phone-gadget-mjdq.onrender.com/images/loading.png" alt="Loading..." style="width:80px;height:80px;">
       <p style="color:#3949ab;font-size:1.2em;margin-top:16px;">Loading...</p>
     </div>
     <script>
@@ -510,7 +510,7 @@ function sendCareMessage() {
   const username = localStorage.getItem('gadgetUsername') || 'Guest';
   const email = localStorage.getItem('gadgetEmail') || '';
 
-  fetch('http://localhost:3000/api/customer-care', {
+  fetch('https://ongod-phone-gadget-mjdq.onrender.com/api/customer-care', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ text: msg, username, email })
@@ -525,7 +525,7 @@ function sendCareMessage() {
 // Load messages from backend
 function loadCareMessages() {
   const username = localStorage.getItem('gadgetUsername') || 'Guest';
-  fetch(`http://localhost:3000/api/customer-care/user/${username}`)
+ fetch(`https://ongod-phone-gadget-mjdq.onrender.com/api/customer-care/user/${username}`)
     .then(res => res.json())
     .then(messages => {
       renderCareMessages(messages);
