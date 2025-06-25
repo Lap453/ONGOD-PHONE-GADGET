@@ -3,12 +3,14 @@ localStorage.removeItem('gadgetToken');
 localStorage.removeItem('gadgetLoggedIn');
 localStorage.removeItem('gadgetLastNotif');
 
+// ...existing code...
 // --- API Endpoints ---
-const API_BASE = "http://localhost:3000/api";
+const API_BASE = "https://ongod-phone-gadget-mjdq.onrender.com/api";
 const ORDERS_API = `${API_BASE}/orders`;
 const PRODUCTS_API = `${API_BASE}/products`;
 const USERS_API = `${API_BASE}/users`;
 const NOTIFICATIONS_API = `${API_BASE}/notifications`;
+// ...existing code...
 
 // --- Utility Functions ---
 function escapeHtml(unsafe) {
@@ -288,8 +290,9 @@ function getProductImageUrl(image) {
   if (/^https?:\/\//i.test(image)) {
     return image;
   }
-  return `http://localhost:3000/images/${escapeHtml(image)}`;
+  return `https://ongod-phone-gadget-mjdq.onrender.com/images/${escapeHtml(image)}`;
 }
+// ...existing code...
 
 function displayProducts(containerId, products) {
   const container = document.getElementById(containerId);
