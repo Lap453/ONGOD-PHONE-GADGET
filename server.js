@@ -306,8 +306,9 @@ app.delete('/api/admin/clear-all', (req, res) => {
 });
 
 // --- Start server ---
-app.listen(PORT, () => {
-  console.log(`Backend running on http://localhost:${PORT}`);
+// Listen on all interfaces for LAN/mobile access
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Backend running on http://0.0.0.0:${PORT} (accessible on your local network)`);
   if (process.env.RENDER_EXTERNAL_HOSTNAME) {
     console.log('Public URL: https://' + process.env.RENDER_EXTERNAL_HOSTNAME);
   }
